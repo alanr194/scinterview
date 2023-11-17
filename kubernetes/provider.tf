@@ -1,6 +1,6 @@
 data "google_client_config" "default" {}
-data "google_container_cluster" "my_cluster" {
-  name     = "my-cluster"
+data "google_container_cluster" "scinterview_cluster" {
+  name     = "scinterview-cluster"
   location = "us-east1-a"
 }
 

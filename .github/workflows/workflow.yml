@@ -85,15 +85,6 @@ jobs:
         uses: google-github-actions/auth@v1
         with:
           credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}'
-      - id: 'get-credentials'
-        uses: 'google-github-actions/get-gke-credentials@v1'
-        with:
-          cluster_name: 'scinterview-cluster'
-          location: 'us-east1'
-          use_auth_provider: true
-      - name: Change directory
-        id: cd
-        run: cd cluster/
       - name: Terraform Init
         id: init
         run: terraform init

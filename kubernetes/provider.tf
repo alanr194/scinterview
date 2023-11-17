@@ -1,7 +1,7 @@
 data "google_client_config" "default" {}
 data "google_container_cluster" "scinterview_cluster" {
   name     = "scinterview-cluster"
-  location = "us-east1-a"
+  location = "us-east1"
 }
 
 provider "google" {

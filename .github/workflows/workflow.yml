@@ -17,25 +17,27 @@ jobs:
         uses: google-github-actions/auth@v1
         with:
           credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}'
-      - name: Change directory
-        id: cd
-        run: cd cluster/
       - name: Terraform Init
         id: init
         run: terraform init
+        working-directory: ./cluster
       - name: Terraform Format
         id: fmt
         run: terraform fmt -check
+        working-directory: ./cluster
       - name: Terraform Validate
         id: validate
         if: success() || failure()
         run: terraform validate
+        working-directory: ./cluster
       - name: Terraform Plan
         id: plan
         run: terraform plan
+        working-directory: ./cluster
       - name: Terraform Apply
         id: apply
-        run: terraform apply -auto-approve     
+        run: terraform apply -auto-approve
+        working-directory: ./cluster     
   Build-Docker-Image:
     runs-on: ubuntu-latest
     steps:

@@ -24,7 +24,7 @@ resource "kubernetes_deployment_v1" "scinterview-deployment" {
 
       spec {
         container {
-          image = "us-east1-docker.pkg.dev/scinterview/app:latest"
+          image = "us-east1-docker.pkg.dev/scinterview:latest"
           name  = "nginx"
 
           liveness_probe {

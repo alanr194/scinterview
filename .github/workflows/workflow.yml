@@ -63,7 +63,7 @@ jobs:
         with:
           context: "{{defaultContext}}:application"
           push: true
-          tags: us-east1-docker.pkg.dev/scinterview/app:latest
+          tags: us-east1-docker.pkg.dev/scinterview:latest
   Deploy-Application:
     needs: Build-Docker-Image
     runs-on: ubuntu-latest

@@ -86,7 +86,7 @@ jobs:
         with:
           credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}'
       - name: Generate Kube Config
-        run: gcloud container clusters get-credentials scinterview-cluster
+        run: gcloud container clusters get-credentials scinterview-cluster --region us-east1
       - name: Change directory
         id: cd
         run: cd cluster/

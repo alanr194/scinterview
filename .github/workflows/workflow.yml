@@ -85,8 +85,11 @@ jobs:
         uses: google-github-actions/auth@v1
         with:
           credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}'
-      - name: Generate Kube Config
-        run: gcloud container clusters get-credentials scinterview-cluster --region us-east1
+      - id: 'get-credentials'
+        uses: 'google-github-actions/get-gke-credentials@v1'
+        with:
+          cluster_name: 'scinterview-cluster'
+          location: 'us-east1'
       - name: Change directory
         id: cd
         run: cd cluster/

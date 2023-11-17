@@ -5,7 +5,7 @@ provider "google" {
 
 terraform {
   backend "gcs" {
-    bucket  = "scinterview-terraform-state"
-    prefix  = "terraform/state"
+    bucket = "scinterview-terraform-state"
+    prefix = "terraform/state"
   }
 }

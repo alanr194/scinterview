@@ -2,8 +2,8 @@ resource "kubernetes_deployment_v1" "scinterview-deployment" {
   metadata {
     name = "scinterview-deployment"
     labels = {
-          name = "scinterview-deployment"
-        }
+      name = "scinterview-deployment"
+    }
   }
 
   spec {

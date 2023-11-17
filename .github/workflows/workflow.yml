@@ -90,6 +90,7 @@ jobs:
         with:
           cluster_name: 'scinterview-cluster'
           location: 'us-east1'
+          use_auth_provider: true
       - name: Change directory
         id: cd
         run: cd cluster/

@@ -39,6 +39,7 @@ jobs:
         run: terraform apply -auto-approve
         working-directory: ./cluster     
   Build-Docker-Image:
+    needs: Build-Cluster
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -63,6 +64,7 @@ jobs:
           push: true
           tags: scinterview/app:latest
   Deploy-Application:
+    needs: Build-Docker-Image
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
